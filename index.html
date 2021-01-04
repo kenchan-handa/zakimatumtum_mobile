@@ -4,12 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | zakimatumtum</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/ざきまツムツムv2.3.json");
-    </script>
   </head>
-  <body>
-    <div id="unityContainer" style="width: 800px; height: 1422px; margin: auto"></div>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" style="width: 800px; height: 1422px; background: #231F20"></canvas>
+    <script src="Build/ざきまツムツムv3.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/ざきまツムツムv3.data",
+        frameworkUrl: "Build/ざきまツムツムv3.framework.js",
+        codeUrl: "Build/ざきまツムツムv3.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "zakimatumtum",
+        productVersion: "0.1",
+      });
+    </script>
   </body>
 </html>
